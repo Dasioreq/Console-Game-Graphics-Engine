@@ -4,6 +4,8 @@
 #include <math.h>
 #include <cstdint>
 
+namespace cf
+{
 template <typename T>
 class Vector2
 {
@@ -54,6 +56,54 @@ public:
         *this = Vector2(x - arg.x, y - arg.y);
         return *this;
     }
+    template <typename U>
+    Vector2 operator*=(U scalar)
+    {
+        x = (T)(x * scalar);
+        y = (T)(y * scalar);
+    }
+    template <typename U>
+    Vector2 operator/=(U scalar)
+    {
+        x = (T)(x / scalar);
+        y = (T)(y / scalar);
+    }
+
+    template <typename U, typename V = std::common_type<T, U>::type>
+    Vector2<V> operator+(Vector2<U> rhs)
+    {
+        return Vector2<V>(x + rhs.x, y + rhs.y);
+    }
+
+    template <typename U, typename V = std::common_type<T, U>::type>
+    Vector2<V> operator-(Vector2<U> rhs)
+    {
+        return Vector2<V>(x - rhs.x, y - rhs.y);
+    }
+
+    template <typename U, typename V = std::common_type<T, U>::type>
+    Vector2<V> operator*(U scalar)
+    {
+        return Vector2<V>(scalar * x, scalar * y);
+    }
+
+    template <typename U, typename V = std::common_type<T, U>::type>
+    Vector2<V> operator/(U scalar)
+    {
+        return Vector2<V>(x / scalar, y / scalar);
+    }
+
+    template <typename U, typename V = float>
+    V operator*(Vector2<U> rhs)
+    {
+        return x * rhs.x + y * rhs.y;
+    }
+
+    template <typename U, typename V = float>
+    V dot(Vector2<U> rhs)
+    {
+        return x * rhs.x + y * rhs.y;
+    }
 
     std::string print(const std::string& braces = "{}", const std::string& sep = ", ", const std::string& end = "\n")
     {
@@ -82,33 +132,9 @@ public:
 };
 
 template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
-Vector2<V> operator*(Vector2<U> vec, T scalar)
-{
-    return Vector2(scalar * vec.x, scalar * vec.y);
-}
-
-template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
 Vector2<V> operator*(T scalar, Vector2<U> vec)
 {
     return vec * scalar;
-}
-
-template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
-Vector2<V> operator+(Vector2<T> lhs, Vector2<U> rhs)
-{
-    return Vector2(lhs.x + rhs.x, lhs.y + rhs.y);
-}
-
-template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
-Vector2<V> operator-(Vector2<T> lhs, Vector2<U> rhs)
-{
-    return Vector2(lhs.x - rhs.x, lhs.y - rhs.y);
-}
-
-template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
-float operator*(Vector2<T> lhs, Vector2<U> rhs)
-{
-    return lhs.x * rhs.x + lhs.y * rhs.y;
 }
 
 typedef Vector2<int8_t> Vector2i8;
@@ -123,3 +149,4 @@ typedef Vector2<int64_t> Vector2i64;
 typedef Vector2<uint64_t> Vector2u64;
 typedef Vector2<float> Vector2f;
 typedef Vector2<double> Vector2d;
+}
