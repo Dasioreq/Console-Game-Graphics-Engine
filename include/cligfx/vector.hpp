@@ -3,6 +3,7 @@
 #include <string>
 #include <math.h>
 #include <cstdint>
+#include <format>
 
 namespace cf
 {
@@ -299,7 +300,7 @@ public:
         return braces[0] + xStr + sep + yStr + sep + zStr + braces[1] + end;
     }
 
-    operator bool()
+    constexpr operator bool()
     {
         return true;
     }
