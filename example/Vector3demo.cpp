@@ -11,7 +11,7 @@ int main()
     std::cout << a.print("{}", ", ", "") << " normalized = " << a.normalized().print();
     std::cout << a.print("{}", ", ", "") << " + " << b.print("{}", ", ", "") << " = " << (a + b).print();
     std::cout << b.print("{}", ", ", "") << " - " << a.print("{}", ", ", "") << " = " << (b - a).print();
-    std::cout << "2 * " << b.print("{}", ", ", "") << " = " << (2 * a).print();
+    std::cout << "2 * " << b.print("{}", ", ", "") << " = " << (2 * b).print();
     std::cout << a.print("{}", ", ", "") << " * -1.25f" << " = " << (a * -1.25f).print();
     std::cout << a.print("{}", ", ", "") << " * " << b.print("{}", ", ", "") << " (the dot/scalar product) = " << a.dot(b) << "\n";
     std::cout << a.print("{}", ", ", "") << " x " << b.print("{}", ", ", "") << " (the cross/vector product) = " << a.cross(b).print() << "\n";

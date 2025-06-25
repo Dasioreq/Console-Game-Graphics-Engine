@@ -138,7 +138,7 @@ public:
 };
 
 template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
-constexpr Vector2<V> operator*(T scalar, Vector2<U> vec)
+constexpr inline Vector2<V> operator*(T scalar, Vector2<U> vec)
 {
     return vec * scalar;
 }
@@ -305,6 +305,13 @@ public:
         return true;
     }
 };
+
+template <typename T, typename U, template <typename> class Vector2, typename V = std::common_type<T, U>::type>
+constexpr inline Vector3<V> operator*(T scalar, Vector3<U> vec)
+{
+    return vec * scalar;
+}
+
 
 typedef Vector3<int8_t> Vector3i8;
 typedef Vector3<uint8_t> Vector3u8;
