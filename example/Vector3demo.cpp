@@ -2,8 +2,8 @@
 
 int main()
 {
-    cf::Vector2 a(4, -2); // Vector2<int>
-    cf::Vector2 b = {2.25, 1.25}; //Vector2<double>
+    cf::Vector3 a(4, -2, 5); // Vector3<int>
+    cf::Vector3 b = {1.f, 4.f, .5f}; //Vector3<double>
 
     std::cout << a.print(); //Default print parameters
     std::cout << b.print("()", " : ", " - printing with custom formatting\n");
@@ -13,7 +13,6 @@ int main()
     std::cout << b.print("{}", ", ", "") << " - " << a.print("{}", ", ", "") << " = " << (b - a).print();
     std::cout << "2 * " << b.print("{}", ", ", "") << " = " << (2 * b).print();
     std::cout << a.print("{}", ", ", "") << " * -1.25f" << " = " << (a * -1.25f).print();
-    std::cout << b.print("{}", ", ", "") << " / 3" << " = " << (b / 3).print();
-    std::cout << a.print("{}", ", ", "") << " . " << b.print("{}", ", ", "") << " (the dot/scalar product) = " << a.dot(b);
-    return 0;
+    std::cout << a.print("{}", ", ", "") << " * " << b.print("{}", ", ", "") << " (the dot/scalar product) = " << a.dot(b) << "\n";
+    std::cout << a.print("{}", ", ", "") << " x " << b.print("{}", ", ", "") << " (the cross/vector product) = " << a.cross(b).print() << "\n";
 }
