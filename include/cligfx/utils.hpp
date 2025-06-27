@@ -6,7 +6,8 @@
 #include <cstdint>
 #include <format>
 
-
+namespace cf
+{
 constexpr const char* BOLD_MODE = "\033[1m";
 constexpr const char* FAINT_MODE = "\033[2m";
 constexpr const char* ITALIC_MODE = "\033[3m";
@@ -15,3 +16,5 @@ constexpr const char* BLINKING_MODE = "\033[5m";
 constexpr const char* INVERSE_MODE = "\033[7m";
 constexpr const char* INVISIBLE_MODE = "\033[8m";
 constexpr const char* STRIKETHROUGH_MODE = "\033[9m";
+constexpr const char* RESET_MODE = "\033[0m";
+}
