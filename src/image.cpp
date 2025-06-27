@@ -6,16 +6,16 @@
 Image::Image()
 {}
 
-Image::Image(std::string filename, uchar expectedChannels)
+Image::Image(std::string filename, uint8_t expectedChannels)
 {
-	const uchar* stbiData = stbi_load(filename.c_str(), &width, &height, &channels, expectedChannels);
+	const uint8_t* stbiData = stbi_load(filename.c_str(), &width, &height, &channels, expectedChannels);
 
-	pixels = new uchar*[width * height];
+	pixels = new uint8_t*[width * height];
 	for(int y = 0; y < height; y++)
 	{
 		for(int x = 0; x < width; x++)
 		{
-			pixels[y * width + x] = new uchar[channels];
+			pixels[y * width + x] = new uint8_t[channels];
 			for(int c = 0; c < channels; c++)
 			{
 				pixels[y * width + x][c] = stbiData[y * width + x + c];
@@ -26,14 +26,14 @@ Image::Image(std::string filename, uchar expectedChannels)
 	delete[] stbiData;
 }
 
-Image::Image(const uchar* stbiData, int width, int height, int channels) : width(width), height(height), channels(channels)
+Image::Image(const uint8_t* stbiData, int width, int height, int channels) : width(width), height(height), channels(channels)
 {
-	pixels = new uchar*[width * height];
+	pixels = new uint8_t*[width * height];
 	for(int y = 0; y < height; y++)
 	{
 		for(int x = 0; x < width; x++)
 		{
-			pixels[y * width + x] = new uchar[channels];
+			pixels[y * width + x] = new uint8_t[channels];
 			for(int c = 0; c < channels; c++)
 			{
 				pixels[y * width + x][c] = stbiData[y * width + x + c];

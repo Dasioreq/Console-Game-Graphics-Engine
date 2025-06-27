@@ -1,9 +1,5 @@
 #pragma once
-#include <span>
-#include <string>
-#include <cmath>
-#include <cstdint>
-#include <format>
+#include "utils.hpp"
 
 namespace cf
 {

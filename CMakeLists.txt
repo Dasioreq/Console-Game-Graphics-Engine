@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES
     src/image.cpp
     src/sprite.cpp
-    src/utils.cpp
 )
 
 add_library(cligfx ${SOURCES})
