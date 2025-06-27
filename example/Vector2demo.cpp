@@ -14,6 +14,6 @@ int main()
 	std::cout << "2 * " << b.print("{}", ", ", "") << " = " << (2 * b).print();
 	std::cout << a.print("{}", ", ", "") << " * -1.25f" << " = " << (a * -1.25f).print();
 	std::cout << b.print("{}", ", ", "") << " / 3" << " = " << (b / 3).print();
-	std::cout << a.print("{}", ", ", "") << " . " << b.print("{}", ", ", "") << " (the dot/scalar product) = " << a.dot(b);
+	std::cout << a.print("{}", ", ", "") << " . " << b.print("{}", ", ", "") << " (the dot/scalar product) = " << a.dot(b) << "\n";
 	return 0;
 }

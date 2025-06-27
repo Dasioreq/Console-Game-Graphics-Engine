@@ -1,5 +1,4 @@
 #pragma once
 #include "./utils.hpp"
-#include <iostream>
 
-std::string convert(uchar* data, int width, int height, int channels);
+std::string convert(uint8_t* data, int width, int height, int channels);

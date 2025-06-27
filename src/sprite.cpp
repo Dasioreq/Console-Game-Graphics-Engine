@@ -1,8 +1,6 @@
 #include "cligfx/sprite.hpp"
-#include "./stb_image.h"
-#include <string>
 
-std::string convert(uchar* data, int width, int height, int channels)
+std::string convert(uint8_t* data, int width, int height, int channels)
 {
 	std::string result = "";
 
