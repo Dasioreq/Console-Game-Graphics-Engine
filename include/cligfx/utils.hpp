@@ -5,7 +5,7 @@
 #include <cmath>
 #include <cstdint>
 #include <format>
-
+#include <vector>
 
 constexpr const char* BOLD_MODE = "\033[1m";
 constexpr const char* FAINT_MODE = "\033[2m";

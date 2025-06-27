@@ -1,3 +1,4 @@
+#pragma once
 #include "utils.hpp"
 #include "vector.hpp"
 
@@ -7,7 +8,7 @@ class Transformable
 {
 public:
 	Transformable() = default;
-	Transformable(Vector2f position);
+	Transformable(const Vector2f& position);
 	virtual ~Transformable() = default;
 
 	Vector2f position = {0, 0};
