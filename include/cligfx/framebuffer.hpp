@@ -17,10 +17,10 @@ public:
 	void draw(const Drawable& object);
 	void display() const;
 private:
-	std::vector<char> frame;
-	const Vector2i size;
 	bool isValid(const Vector2i& position) const;
 
+	std::vector<char> frame;
+	const Vector2i size;
 	char overflow;
 };
 }
