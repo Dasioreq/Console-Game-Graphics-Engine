@@ -18,7 +18,6 @@ public:
 	{
 		x = (T)arg.x;
 		y = (T)arg.y;
-		x + y;
 	}
 	constexpr Vector2(std::span<T, 2>& args) : x(args[0]), y(args[1])
 	{}
